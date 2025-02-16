@@ -1,0 +1,10 @@
+a = 100
+str = "siki"
+isDie = false
+
+person = {
+    name = "siki", age = 100, 12, a,
+    eat = function()
+        print("吃饭")
+    end
+}
