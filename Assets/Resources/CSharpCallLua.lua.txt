@@ -3,8 +3,17 @@ str = "siki"
 isDie = false
 
 person = {
-    name = "siki", age = 100, 12, a,
-    eat = function()
-        print("吃饭")
+    name = "siki", age = 100, 12,12, a,"si",true,3.3,
+    eat = function (self, a, b) 
+        print(a+b)
     end
 }
+--[
+function person:eat(a, b) --默认带一个self的参数，代表当前table
+    print(a+b)
+end
+--]
+function add(a,b)
+    print(a+b)
+    return a+b, a, b
+end

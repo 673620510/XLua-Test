@@ -26,7 +26,7 @@ namespace XLua.CSObjectWrap
         }
 		
         
-		void CSharpCallLua.IPerson.eat()
+		void CSharpCallLua.IPerson.eat(int a, int b)
 		{
 #if THREAD_SAFE || HOTFIX_ENABLE
             lock (luaEnv.luaEnvLock)
@@ -49,8 +49,10 @@ namespace XLua.CSObjectWrap
 				}
 				LuaAPI.lua_pushvalue(L, -2);
 				LuaAPI.lua_remove(L, -3);
+				LuaAPI.xlua_pushinteger(L, a);
+				LuaAPI.xlua_pushinteger(L, b);
 				
-				int __gen_error = LuaAPI.lua_pcall(L, 1, 0, err_func);
+				int __gen_error = LuaAPI.lua_pcall(L, 3, 0, err_func);
 				if (__gen_error != 0)
 					luaEnv.ThrowExceptionFromError(err_func - 1);
 				
