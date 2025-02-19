@@ -1,4 +1,4 @@
---构造游戏物体，new对象
+--鏋勯�犳父鎴忕墿浣擄紝new瀵硅薄
 CS.UnityEngine.GameObject("new by lua")
 
 print(CS.UnityEngine.Time.deltaTime)
@@ -10,7 +10,7 @@ local gameObject = CS.UnityEngine.GameObject
 local camera = gameObject.Find("Main Camera")
 
 camera.name = "update by lua"
---调用成员方法的时候，使用冒号:
+--璋冪敤鎴愬憳鏂规硶鐨勬椂鍊欙紝浣跨敤鍐掑彿:
 local cameraCom = camera:GetComponent("Camera")
 
 gameObject.Destroy(camera)
